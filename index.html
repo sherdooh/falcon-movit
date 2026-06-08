@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Falcon Movers & Cleaning Co. | Premium Relocations & Cleaning</title>
+  <!-- Google Fonts + Tailwind + Font Awesome -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+    .font-serif {
+      font-family: 'Playfair Display', serif;
+    }
+    /* custom theme */
+    .bg-falcon-dark { background-color: #0A0C15; }
+    .bg-falcon-gold { background-color: #D4AF37; }
+    .text-falcon-gold { color: #D4AF37; }
+    .border-falcon-gold { border-color: #D4AF37; }
+    .hover\:bg-falcon-gold:hover { background-color: #D4AF37; }
+    .hover\:text-falcon-gold:hover { color: #D4AF37; }
+    .from-falcon-dark { --tw-gradient-from: #0A0C15; }
+    .ring-falcon-gold { --tw-ring-color: #D4AF37; }
+    
+    /* elegant animations */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(35px);
+      transition: opacity 0.8s cubic-bezier(0.2, 0.9, 0.4, 1.1), transform 0.8s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+    }
+    .fade-up.appear {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .service-card {
+      transition: all 0.4s ease;
+    }
+    .service-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 25px 40px -12px rgba(0,0,0,0.25);
+    }
+    .floating-icon {
+      animation: float 4s ease-in-out infinite;
+    }
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-8px); }
+      100% { transform: translateY(0px); }
+    }
+    .hero-overlay {
+      background: linear-gradient(135deg, rgba(10,12,21,0.88) 0%, rgba(10,12,21,0.75) 100%);
+    }
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #1A1D2B;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #D4AF37;
+      border-radius: 10px;
+    }
+    .img-glow {
+      box-shadow: 0 20px 35px -15px rgba(0,0,0,0.3);
+    }
+  </style>
+</head>
+<body class="antialiased overflow-x-hidden bg-white">
+
+  <!-- ==================== NAVBAR ==================== -->
+  <nav class="bg-white/95 backdrop-blur-md shadow-lg sticky top-0 z-50 border-b border-gray-100">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
+      <div class="flex justify-between items-center py-4">
+        <div class="flex items-center space-x-3">
+          <div class="w-12 h-12 bg-gradient-to-br from-[#D4AF37] to-[#B8912E] rounded-xl flex items-center justify-center shadow-lg transform rotate-3">
+            <span class="text-white font-bold text-2xl tracking-tight">F</span>
+          </div>
+          <div class="flex flex-col">
+            <span class="font-extrabold text-xl tracking-tight text-[#0A0C15]">FALCON</span>
+            <span class="text-[11px] text-[#D4AF37] font-semibold -mt-1 uppercase tracking-wide">Movers & Cleaning</span>
+          </div>
+        </div>
+        <div class="hidden md:flex items-center space-x-10">
+          <a href="#home" class="text-[#1E1E2A] font-medium hover:text-[#D4AF37] transition-all duration-300">Home</a>
+          <a href="#services" class="text-[#1E1E2A] font-medium hover:text-[#D4AF37] transition-all duration-300">Services</a>
+          <a href="#contact" class="text-[#1E1E2A] font-medium hover:text-[#D4AF37] transition-all duration-300">Contact</a>
+          <a href="tel:0700890347" class="bg-gradient-to-r from-[#D4AF37] to-[#B8912E] text-white px-6 py-2.5 rounded-full font-semibold flex items-center gap-2 shadow-md hover:shadow-xl transition-all">
+            <i class="fas fa-phone-alt text-sm"></i> Call Now
+          </a>
+        </div>
+        <div class="md:hidden">
+          <button id="mobile-menu-btn" class="text-[#0A0C15] focus:outline-none text-2xl"><i class="fas fa-bars"></i></button>
+        </div>
+      </div>
+      <div id="mobile-menu" class="md:hidden hidden pb-6 space-y-4 border-t border-gray-100 pt-4">
+        <a href="#home" class="block font-medium hover:text-[#D4AF37] transition px-2">Home</a>
+        <a href="#services" class="block font-medium hover:text-[#D4AF37] transition px-2">Services</a>
+        <a href="#contact" class="block font-medium hover:text-[#D4AF37] transition px-2">Contact</a>
+        <a href="tel:0700890347" class="inline-flex items-center gap-2 bg-[#D4AF37] text-white px-5 py-2 rounded-full font-semibold">📞 Call Now</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ==================== HERO SECTION WITH IMAGE BACKGROUND ==================== -->
+  <section id="home" class="relative min-h-[92vh] flex items-center bg-cover bg-center bg-no-repeat" style="background-image: url('https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1600&q=80'); background-size: cover; background-position: center 30%;">
+    <div class="hero-overlay absolute inset-0 bg-gradient-to-r from-[#0A0C15]/90 via-[#0A0C15]/80 to-[#0A0C15]/70"></div>
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10 relative z-10 py-16">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div class="fade-up text-white">
+          <div class="inline-block px-4 py-1.5 bg-[#D4AF37]/20 backdrop-blur-sm rounded-full text-[#D4AF37] text-sm font-semibold mb-5 border border-[#D4AF37]/30">
+            <i class="fas fa-star-of-life mr-1"></i> Trusted Since 2012
+          </div>
+          <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight font-serif">
+            <span class="text-[#D4AF37]">FALCON</span><br>
+            <span class="text-white">Movers & Cleaning Co.</span>
+          </h1>
+          <p class="text-xl md:text-2xl font-semibold mt-5 text-[#D4AF37] italic">Moving You Forward. Cleaning It Right.</p>
+          <p class="mt-6 text-gray-200 text-lg max-w-lg leading-relaxed">Experience seamless relocations and pristine cleaning services. Premium quality, affordable rates across Machakos & Nairobi.</p>
+          <div class="mt-8 flex flex-wrap gap-5">
+            <a href="#contact" class="bg-[#D4AF37] hover:bg-white hover:text-[#D4AF37] text-[#0A0C15] px-8 py-3.5 rounded-full font-bold transition-all flex items-center gap-2 shadow-xl"><i class="fas fa-calendar-check"></i> Request Quote</a>
+            <a href="tel:0700890347" class="border-2 border-[#D4AF37] text-[#D4AF37] hover:bg-[#D4AF37] hover:text-white px-8 py-3.5 rounded-full font-semibold transition-all flex items-center gap-2"><i class="fas fa-headset"></i> 24/7 Support</a>
+          </div>
+          <div class="mt-10 flex flex-wrap gap-x-8 gap-y-3 text-sm text-gray-200">
+            <div class="flex items-center gap-2"><i class="fas fa-phone-alt text-[#D4AF37] text-lg"></i> <span>0700 890347 / 0114 636388</span></div>
+            <div class="flex items-center gap-2"><i class="fas fa-envelope text-[#D4AF37] text-lg"></i> <span>falconmoversandcleaning@gmail.com</span></div>
+          </div>
+        </div>
+        <div class="hidden md:block relative fade-up">
+          <div class="relative bg-white/10 backdrop-blur-lg rounded-2xl p-6 border border-white/30 shadow-2xl">
+            <div class="grid grid-cols-2 gap-5">
+              <div class="bg-gradient-to-br from-[#D4AF37]/30 to-transparent p-4 rounded-xl text-center backdrop-blur-sm"><div class="text-4xl font-bold text-[#D4AF37]">10+</div><div class="text-sm font-medium">Years Excellence</div></div>
+              <div class="bg-gradient-to-br from-[#D4AF37]/30 to-transparent p-4 rounded-xl text-center"><div class="text-4xl font-bold text-[#D4AF37]">1.2K+</div><div class="text-sm font-medium">Moves Completed</div></div>
+              <div class="bg-gradient-to-br from-[#D4AF37]/30 to-transparent p-4 rounded-xl text-center"><div class="text-4xl font-bold text-[#D4AF37]">24/7</div><div class="text-sm font-medium">Emergency Care</div></div>
+              <div class="bg-gradient-to-br from-[#D4AF37]/30 to-transparent p-4 rounded-xl text-center"><div class="text-4xl font-bold text-[#D4AF37]">100%</div><div class="text-sm font-medium">Satisfaction</div></div>
+            </div>
+            <div class="mt-5 text-center text-xs text-white/70"><i class="fas fa-truck-fast mr-1"></i> Licensed & Insured</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== SERVICES SECTION with visual cards ==================== -->
+  <section id="services" class="py-24 bg-gradient-to-b from-white to-[#F8F9FC]">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
+      <div class="text-center mb-16 fade-up">
+        <span class="text-[#D4AF37] font-semibold text-sm uppercase tracking-wider"><i class="fas fa-brush"></i> What We Offer</span>
+        <h2 class="text-4xl md:text-5xl font-bold text-[#0A0C15] mt-2 font-serif">Premium Moving & Cleaning</h2>
+        <div class="w-20 h-0.5 bg-gradient-to-r from-[#D4AF37] to-[#B8912E] mx-auto mt-5 mb-5"></div>
+        <p class="text-gray-600 max-w-2xl mx-auto text-lg">Tailored solutions that combine efficiency, care, and elegance.</p>
+      </div>
+
+      <div class="grid lg:grid-cols-2 gap-12">
+        <!-- Cleaning with image backdrop -->
+        <div class="fade-up group">
+          <div class="bg-white rounded-3xl shadow-2xl overflow-hidden service-card h-full">
+            <div class="h-48 bg-cover bg-center relative" style="background-image: url('https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=800&q=80');">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-5"><h3 class="text-2xl font-bold text-white flex items-center gap-2"><i class="fas fa-broom text-[#D4AF37]"></i> Cleaning Services</h3></div>
+            </div>
+            <div class="p-7">
+              <div class="grid sm:grid-cols-2 gap-5">
+                <div class="flex items-start gap-3"><i class="fas fa-shoe-prints text-[#D4AF37] text-xl mt-1"></i><div><h4 class="font-bold">Shoes cleaning</h4><p class="text-sm text-gray-500">Premium leather & fabric care</p></div></div>
+                <div class="flex items-start gap-3"><i class="fas fa-couch text-[#D4AF37] text-xl mt-1"></i><div><h4 class="font-bold">Carpet cleaning & delivery</h4><p class="text-sm text-gray-500">Deep steam + free delivery</p></div></div>
+                <div class="flex items-start gap-3"><i class="fas fa-sparkles text-[#D4AF37] text-xl mt-1"></i><div><h4 class="font-bold">General cleaning</h4><p class="text-sm text-gray-500">Residential & commercial</p></div></div>
+                <div class="flex items-start gap-3"><i class="fas fa-tree text-[#D4AF37] text-xl mt-1"></i><div><h4 class="font-bold">Compound cleaning</h4><p class="text-sm text-gray-500">Garden & exterior areas</p></div></div>
+                <div class="flex items-start gap-3"><i class="fas fa-hard-hat text-[#D4AF37] text-xl mt-1"></i><div><h4 class="font-bold">Construction site cleaning</h4><p class="text-sm text-gray-500">Post-reno debris removal</p></div></div>
+              </div>
+              <div class="mt-6 p-3 bg-amber-50 rounded-xl flex items-center gap-2 text-sm border border-amber-200"><i class="fas fa-map-pin text-[#D4AF37]"></i><span class="font-medium">Available: Machakos CBD, Nairobi & surrounding counties</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Moving with image -->
+        <div class="fade-up">
+          <div class="bg-white rounded-3xl shadow-2xl overflow-hidden service-card h-full">
+            <div class="h-48 bg-cover bg-center relative" style="background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80');">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-5"><h3 class="text-2xl font-bold text-white flex items-center gap-2"><i class="fas fa-truck-moving text-[#D4AF37]"></i> Moving Services</h3></div>
+            </div>
+            <div class="p-7">
+              <div class="grid sm:grid-cols-2 gap-5">
+                <div class="flex items-start gap-3"><i class="fas fa-home text-[#D4AF37] text-xl mt-1"></i><div><h4 class="font-bold">House relocations</h4><p class="text-sm text-gray-500">Safe & insured packing</p></div></div>
+                <div class="flex items-start gap-3"><i class="fas fa-building text-[#D4AF37] text-xl mt-1"></i><div><h4 class="font-bold">Office relocations</h4><p class="text-sm text-gray-500">Minimal downtime, IT setup</p></div></div>
+                <div class="flex items-start gap-3"><i class="fas fa-map-marked-alt text-[#D4AF37] text-xl mt-1"></i><div><h4 class="font-bold">Long distances</h4><p class="text-sm text-gray-500">Nationwide & cross-country</p></div></div>
+              </div>
+              <div class="mt-7 p-4 bg-gradient-to-r from-[#D4AF37] to-[#B8912E] rounded-xl text-white text-center shadow-md"><p class="font-bold flex items-center justify-center gap-2"><i class="fas fa-tachometer-alt"></i> Express Long Distance Specialists</p><p class="text-sm mt-1">Affordable rates | Real-time tracking</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- elegant premium banner -->
+      <div class="mt-20 relative rounded-3xl overflow-hidden shadow-2xl fade-up">
+        <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=1200&q=80'); filter: brightness(0.3);"></div>
+        <div class="relative z-10 py-12 px-6 md:py-16 text-center text-white">
+          <h3 class="text-3xl md:text-4xl font-bold font-serif mb-3">✨ Affordable Excellence, Zero Compromise ✨</h3>
+          <p class="text-gray-200 max-w-2xl mx-auto">Located in Machakos County – we bring premium moving & cleaning within everyone's reach. Free estimation & transparent pricing.</p>
+          <div class="flex flex-wrap justify-center gap-5 mt-8">
+            <a href="tel:0700890347" class="bg-[#D4AF37] text-[#0A0C15] px-8 py-3 rounded-full font-bold hover:scale-105 transition shadow-xl">📞 0700 890347</a>
+            <a href="tel:0114636388" class="border-2 border-[#D4AF37] text-[#D4AF37] px-8 py-3 rounded-full font-bold hover:bg-[#D4AF37] hover:text-white transition">📞 0114 636388</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== CONTACT SECTION with refined look ==================== -->
+  <section id="contact" class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
+      <div class="text-center mb-14 fade-up">
+        <span class="text-[#D4AF37] text-sm font-semibold uppercase tracking-wider"><i class="fas fa-comments"></i> Get In Touch</span>
+        <h2 class="text-4xl md:text-5xl font-bold text-[#0A0C15] mt-2 font-serif">Let's Plan Your Move</h2>
+        <div class="w-20 h-0.5 bg-[#D4AF37] mx-auto mt-5"></div>
+      </div>
+      <div class="grid md:grid-cols-2 gap-12">
+        <!-- elegant contact card with subtle image -->
+        <div class="fade-up bg-[#F9F9FC] rounded-3xl p-8 shadow-xl border border-gray-100">
+          <div class="flex items-center gap-4 mb-6"><div class="w-12 h-12 bg-[#D4AF37]/20 rounded-2xl flex items-center justify-center"><i class="fas fa-phone-alt text-[#D4AF37] text-xl"></i></div><h3 class="text-2xl font-bold">Reach Us Directly</h3></div>
+          <div class="space-y-6">
+            <div><p class="text-sm text-gray-500 uppercase font-semibold">Call / WhatsApp</p><a href="tel:0700890347" class="text-2xl font-bold text-[#0A0C15] hover:text-[#D4AF37] transition">0700 890347</a><br><a href="tel:0114636388" class="text-xl text-gray-700 hover:text-[#D4AF37] transition">0114 636388</a></div>
+            <div><p class="text-sm text-gray-500 uppercase font-semibold">Email</p><a href="mailto:falconmoversandcleaning@gmail.com" class="text-[#0A0C15] break-all hover:text-[#D4AF37]">falconmoversandcleaning@gmail.com</a></div>
+            <div><p class="text-sm text-gray-500 uppercase font-semibold">📍 Locations</p><p class="font-medium">Main Office: Machakos CBD</p><p class="font-medium">Nairobi Branch (Westlands)</p><p class="text-sm text-gray-500 mt-1">Serving Machakos County & greater Nairobi</p></div>
+            <div><p class="text-sm text-gray-500 uppercase font-semibold">⏰ Business Hours</p><p>Mon-Sat: 7am – 7pm | Sunday by prior arrangement</p></div>
+          </div>
+          <div class="mt-8"><a href="https://wa.me/254700890347" target="_blank" class="flex items-center justify-center gap-3 bg-[#25D366] text-white px-6 py-3.5 rounded-xl font-bold shadow-lg hover:shadow-xl transition"><i class="fab fa-whatsapp text-2xl"></i> Chat on WhatsApp</a></div>
+        </div>
+
+        <!-- why choose + image -->
+        <div class="fade-up bg-gradient-to-br from-[#0A0C15] to-[#141824] rounded-3xl p-8 shadow-2xl text-white relative overflow-hidden">
+          <div class="absolute right-0 top-0 opacity-10"><i class="fas fa-truck-moving text-9xl"></i></div>
+          <h3 class="text-2xl font-bold mb-5 flex items-center gap-2"><i class="fas fa-gem text-[#D4AF37]"></i> The Falcon Advantage</h3>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-7">
+            <div class="flex items-center gap-2"><i class="fas fa-check-circle text-[#D4AF37]"></i> Affordable & Transparent</div>
+            <div class="flex items-center gap-2"><i class="fas fa-check-circle text-[#D4AF37]"></i> Trained Professionals</div>
+            <div class="flex items-center gap-2"><i class="fas fa-check-circle text-[#D4AF37]"></i> Modern Equipment</div>
+            <div class="flex items-center gap-2"><i class="fas fa-check-circle text-[#D4AF37]"></i> On-time Guarantee</div>
+            <div class="flex items-center gap-2"><i class="fas fa-check-circle text-[#D4AF37]"></i> Fully Insured</div>
+            <div class="flex items-center gap-2"><i class="fas fa-check-circle text-[#D4AF37]"></i> 24/7 Emergency Support</div>
+          </div>
+          <div class="bg-[#D4AF37]/10 rounded-xl p-5 text-center border border-[#D4AF37]/30"><p class="text-[#D4AF37] font-serif italic text-xl">"Moving You Forward. Cleaning It Right."</p><p class="text-gray-300 text-sm mt-2">Get your free quote today – no obligations</p></div>
+        </div>
+      </div>
+      <div class="mt-14 text-center fade-up"><div class="inline-flex items-center gap-4 bg-gradient-to-r from-[#D4AF37]/10 to-transparent px-7 py-3.5 rounded-full shadow-inner flex-wrap justify-center"><i class="fas fa-phone-volume text-[#D4AF37] text-xl animate-pulse"></i><span class="font-semibold">Need urgent moving or cleaning? Call us anytime:</span><a href="tel:0700890347" class="text-[#D4AF37] font-bold text-lg">0700 890347</a><span>or</span><a href="tel:0114636388" class="text-[#D4AF37] font-bold text-lg">0114 636388</a></div></div>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER with brand images ==================== -->
+  <footer class="bg-[#0A0C15] text-white pt-16 pb-8 border-t border-[#D4AF37]/20">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
+      <div class="grid md:grid-cols-4 gap-10 mb-10">
+        <div><div class="flex items-center gap-2 mb-4"><div class="w-10 h-10 bg-[#D4AF37] rounded-xl flex items-center justify-center"><span class="font-bold text-[#0A0C15] text-xl">F</span></div><span class="font-bold text-2xl">FALCON</span></div><p class="text-gray-400 text-sm leading-relaxed">Redefining relocation & cleanliness with precision and care. Your trusted partner in Machakos & Nairobi.</p><div class="flex gap-3 mt-5"><i class="fab fa-cc-visa text-gray-500"></i><i class="fab fa-cc-mastercard text-gray-500"></i><i class="fab fa-cc-paypal text-gray-500"></i></div></div>
+        <div><h4 class="font-bold text-lg mb-4 text-[#D4AF37]">Services</h4><ul class="space-y-2 text-gray-400 text-sm"><li>✔ House/Office Relocation</li><li>✔ Long Distance Moving</li><li>✔ Carpet & Shoes Cleaning</li><li>✔ Construction Site Cleaning</li><li>✔ General & Compound Care</li></ul></div>
+        <div><h4 class="font-bold text-lg mb-4 text-[#D4AF37]">Contact Info</h4><ul class="space-y-2 text-gray-400 text-sm"><li class="flex items-center gap-2"><i class="fas fa-phone-alt w-4"></i> 0700 890347 / 0114 636388</li><li class="flex items-center gap-2 break-all"><i class="fas fa-envelope w-4"></i> falconmoversandcleaning@gmail.com</li><li class="flex items-center gap-2"><i class="fas fa-map-marker-alt w-4"></i> Machakos CBD | Nairobi Branch</li></ul></div>
+        <div><h4 class="font-bold text-lg mb-4 text-[#D4AF37]">Follow & Connect</h4><div class="flex space-x-4"><a href="#" class="bg-gray-800 w-10 h-10 rounded-full flex items-center justify-center hover:bg-[#D4AF37] hover:text-[#0A0C15] transition"><i class="fab fa-facebook-f"></i></a><a href="#" class="bg-gray-800 w-10 h-10 rounded-full flex items-center justify-center hover:bg-[#D4AF37] transition"><i class="fab fa-twitter"></i></a><a href="#" class="bg-gray-800 w-10 h-10 rounded-full flex items-center justify-center hover:bg-[#D4AF37] transition"><i class="fab fa-instagram"></i></a></div><p class="text-gray-500 text-xs mt-5">Emergency hotline active 24/7</p></div>
+      </div>
+      <div class="border-t border-gray-800 pt-6 text-center text-gray-500 text-sm"><p>&copy; 2026 Falcon Movers & Cleaning Co. All rights reserved. | Located at Machakos County | Affordable & Premium</p></div>
+    </div>
+  </footer>
+
+  <script>
+    // Intersection Observer for elegant fade-up
+    const faders = document.querySelectorAll('.fade-up');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('appear');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: "0px 0px -20px 0px" });
+    faders.forEach(el => observer.observe(el));
+
+    // mobile menu
+    const btn = document.getElementById('mobile-menu-btn');
+    const mobileDiv = document.getElementById('mobile-menu');
+    if (btn && mobileDiv) {
+      btn.addEventListener('click', () => {
+        mobileDiv.classList.toggle('hidden');
+        const icon = btn.querySelector('i');
+        if (icon.classList.contains('fa-bars')) { icon.classList.remove('fa-bars'); icon.classList.add('fa-times'); } 
+        else { icon.classList.remove('fa-times'); icon.classList.add('fa-bars'); }
+      });
+      mobileDiv.querySelectorAll('a').forEach(link => link.addEventListener('click', () => { mobileDiv.classList.add('hidden'); btn.querySelector('i').classList.remove('fa-times'); btn.querySelector('i').classList.add('fa-bars'); }));
+    }
+  </script>
+</body>
+</html>
